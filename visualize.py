@@ -5,4 +5,5 @@ def plot_fraction(history):
     plt.plot(fractions)
     plt.xlabel("Temps")
     plt.ylabel("Fraction informée")
-    plt.show()
+    plt.savefig("fractions.png")
+    plt.close()

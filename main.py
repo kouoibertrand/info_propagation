@@ -1,6 +1,8 @@
 import numpy as np
 import networkx as nx
 from model import step
+from metrics import fraction_informed
+from visualize import plot_fraction
 
 N = 100
 threshold = 2
@@ -18,4 +20,12 @@ for _ in range(T):
     states = step(states, graph, threshold)
     history.append(states.copy())
 
-print("Fraction informée finale :", states.mean())
+#print("Fraction informée finale :", states.mean())
+
+#print(fraction_informed(states))
+
+#fractions = [(h == 1).mean() for h in history]
+#import matplotlib.pyplot as plt
+#plt.plot(fractions)
+#plt.show()
+plot_fraction(history)
